@@ -275,7 +275,7 @@ class ImageComparator
             throw new ImageResourceException('Could not create an image resource from file');
         }
 
-        $normalizedImage = imagecreatefromstring($imageData);
+        $normalizedImage = @imagecreatefromstring($imageData);
 
         if (false === $normalizedImage) {
             throw new ImageResourceException('Could not create an image resource from file');
